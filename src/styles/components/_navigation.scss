@@ -1,0 +1,9 @@
+.navigation {
+    a {
+        transition: all 0.5s ease; // set transition on the base state
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
