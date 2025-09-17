@@ -21,7 +21,7 @@ const Navigation: React.FC = () => {
                 <NavLink
                     to="/sales"
                     className={({ isActive }) =>
-                        `text-[22px] font-bold flex items-center ${isActive ? "text-yellow-300" : "text-white"
+                        `text-[22px] font-bold flex items-center ${isActive ? "bg-white text-[#2BB0EE] rounded-xl px-3 py-1 shadow-xl" : "text-white"
                         }`
                     }
                 >
@@ -31,7 +31,7 @@ const Navigation: React.FC = () => {
                 <NavLink
                     to="/feed"
                     className={({ isActive }) =>
-                        `text-[22px] font-bold flex items-center ${isActive ? "text-yellow-300" : "text-white"
+                        `text-[22px] font-bold flex items-center ${isActive ? "bg-white text-[#2BB0EE] rounded-xl px-3 py-1 shadow-xl" : "text-white"
                         }`
                     }
                 >
@@ -41,7 +41,7 @@ const Navigation: React.FC = () => {
                 <NavLink
                     to="/analytics"
                     className={({ isActive }) =>
-                        `text-[22px] font-bold flex items-center ${isActive ? "text-yellow-300" : "text-white"
+                        `text-[22px] font-bold flex items-center ${isActive ? "bg-white text-[#2BB0EE] rounded-xl px-3 py-1 shadow-xl" : "text-white"
                         }`
                     }
                 >
@@ -51,7 +51,7 @@ const Navigation: React.FC = () => {
                 <NavLink
                     to="/customers"
                     className={({ isActive }) =>
-                        `text-[22px] font-bold flex items-center ${isActive ? "text-yellow-300" : "text-white"
+                        `text-[22px] font-bold flex items-center ${isActive ? "bg-white text-[#2BB0EE] rounded-xl px-3 py-1 shadow-xl" : "text-white"
                         }`
                     }
                 >
@@ -64,7 +64,7 @@ const Navigation: React.FC = () => {
                 <NavLink
                     to="/settings"
                     className={({ isActive }) =>
-                        `text-[22px] font-bold flex items-center ${isActive ? "text-yellow-300" : "text-white"
+                        `text-[22px] font-bold flex items-center ${isActive ? "bg-white text-[#2BB0EE] rounded-xl px-3 py-1 shadow-xl" : "text-white"
                         }`
                     }
                 >
@@ -74,7 +74,7 @@ const Navigation: React.FC = () => {
                 <NavLink
                     to="/about"
                     className={({ isActive }) =>
-                        `text-[22px] font-bold flex items-center ${isActive ? "text-yellow-300" : "text-white"
+                        `text-[22px] font-bold flex items-center ${isActive ? "bg-white text-[#2BB0EE] rounded-xl px-3 py-1 shadow-xl" : "text-white"
                         }`
                     }
                 >
