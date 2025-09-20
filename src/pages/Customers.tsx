@@ -5,7 +5,9 @@ const Customers: React.FC = () => {
     return (
         <div className="dashboard flex">
             <Navigation />
-            <OtherPagesHeader title="Customers" />
+            <div className=" w-[77%] mx-auto">
+                <OtherPagesHeader title="Customers" />
+            </div>
         </div>
     )
 }

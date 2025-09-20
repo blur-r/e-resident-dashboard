@@ -5,7 +5,9 @@ const Analytics: React.FC = () => {
     return (
         <div className="dashboard flex">
             <Navigation />
-            <OtherPagesHeader title="Analytics" />
+            <div className=" w-[77%] mx-auto">
+                <OtherPagesHeader title="Analytics" />
+            </div>
         </div>
     )
 }

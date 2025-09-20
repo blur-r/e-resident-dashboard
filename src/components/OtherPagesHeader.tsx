@@ -1,6 +1,6 @@
 const OtherPagesHeader: React.FC<{ title: string }> = ({ title }) => {
     return (
-        <div className="other-pages-header bg-white flex items-center h-[80px] w-[77%] mx-auto mt-10 rounded-2xl px-10 gap-20">
+        <div className="other-pages-header bg-white flex items-center h-[80px] w-full mt-10 rounded-2xl px-10 gap-20">
             <h1 className="text-4xl font-bold">{title}</h1>
             <div className="flex gap-10">
                 <div className="w-[250px] border-1 rounded-md pl-3 py-0.5">

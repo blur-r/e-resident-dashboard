@@ -5,7 +5,9 @@ const Sales: React.FC = () => {
     return (
         <div className="dashboard flex">
             <Navigation />
-            <OtherPagesHeader title="Sales" />
+            <div className=" w-[77%] mx-auto">
+                <OtherPagesHeader title="Sales" />
+            </div>
         </div>
     )
 }
