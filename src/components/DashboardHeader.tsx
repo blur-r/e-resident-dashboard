@@ -1,6 +1,6 @@
 const DashboardHeader: React.FC = () => {
     return (
-        <div className="other-pages-header bg-white flex items-center justify-between h-[80px] w-[77%] mx-auto mt-10 rounded-2xl px-10 gap-20">
+        <div className="dashboard-pages-header bg-white flex items-center justify-between h-[80px] w-full mx-auto mt-10 rounded-2xl px-10 gap-20">
             <div>
                 <p className="text-2xl font-bold">
                     Hi, Welcome Back.
