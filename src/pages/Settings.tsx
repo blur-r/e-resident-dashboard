@@ -5,7 +5,7 @@ const Settings: React.FC = () => {
     return (
         <div className="dashboard flex">
             <Navigation />
-            <div className=" w-[77%] mx-auto">
+            <div className=" w-[77%] ml-auto pr-7">
                 <OtherPagesHeader title="Settings" />
                 <div className="w-full mx-auto mt-10 bg-gray-50 px-[70px] pt-6 pb-[50px] rounded-xl shadow-sm">
                     <h2 className="text-gray-700 font-medium mb-3">Company Information</h2>

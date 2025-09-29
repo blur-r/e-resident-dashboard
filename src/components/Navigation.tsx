@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Navigation: React.FC = () => {
     return (
-        <div className="navigation flex flex-col h-screen bg-[#2BB0EE] text-white w-1/5 gap-16 items-start pt-15 pl-10">
+        <div className="navigation flex flex-col h-screen bg-[#2BB0EE] text-white w-1/5 gap-16 items-start pt-15 pl-10 fixed">
             <h1 className="font-bold text-[30px]">e-Resident</h1>
 
             {/* Main Navigation */}

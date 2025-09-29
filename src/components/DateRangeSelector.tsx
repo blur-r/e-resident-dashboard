@@ -1,19 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { DateRangePicker } from "react-date-range";
 import { format } from "date-fns/format";
-import { addDays } from "date-fns";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
+import { useDateRange } from "../context/AppContext";
 
 
 const DateRangeSelector: React.FC = () => {
-    const [range, setRange] = useState([
-        {
-            startDate: new Date(),
-            endDate: addDays(new Date(), 7),
-            key: "selection",
-        },
-    ]);
+    const { range, setRange } = useDateRange();
 
     const [open, setOpen] = useState(false);
 
@@ -40,6 +34,21 @@ const DateRangeSelector: React.FC = () => {
         e.stopPropagation();
         setOpen((prev) => !prev);
     };
+
+    type RangeType = {
+        startDate: Date | undefined;
+        endDate: Date | undefined;
+        key: string;
+    };
+
+    const handleChange = (ranges: { selection: RangeType }) => {
+        const { selection } = ranges;
+        setRange({
+            startDate: selection.startDate!,
+            endDate: selection.endDate!,
+        });
+    };
+
     return (
         <div className="relative w-fit" ref={refOne}>
 
@@ -50,8 +59,8 @@ const DateRangeSelector: React.FC = () => {
                 <i className="fas fa-calendar-days text-gray-500"></i>
 
                 <span className="text-sm text-gray-700 truncate">
-                    {`${format(range[0].startDate, "MMM dd, yyyy")} - ${format(
-                        range[0].endDate,
+                    {`${format(range.startDate, "MMM dd, yyyy")} - ${format(
+                        range.endDate,
                         "MMM dd, yyyy"
                     )}`}
                 </span>
@@ -66,10 +75,16 @@ const DateRangeSelector: React.FC = () => {
             <div className="absolute z-50 mt-2">
                 {open && (
                     <DateRangePicker
-                        onChange={(item) => setRange([item.selection])}
+                        onChange={handleChange}
                         editableDateInputs={true}
                         moveRangeOnFirstSelection={false}
-                        ranges={range}
+                        ranges={[
+                            {
+                                startDate: range.startDate,
+                                endDate: range.endDate,
+                                key: "selection",
+                            },
+                        ]}
                         months={1}
                         direction="horizontal"
                         className="calendarElement bg-white rounded-lg shadow-lg"

@@ -5,7 +5,7 @@ const Feeds: React.FC = () => {
     return (
         <div className="dashboard flex">
             <Navigation />
-            <div className=" w-[77%] mx-auto">
+            <div className=" w-[77%] ml-auto pr-7">
                 <OtherPagesHeader title="Feeds" />
             </div>
         </div>

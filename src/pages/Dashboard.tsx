@@ -1,13 +1,26 @@
 import Navigation from "../components/Navigation"
 import DashboardHeader from "../components/DashboardHeader"
 import DateRangeSelector from "../components/DateRangeSelector"
+import AnalyticsComp from "../components/AnalyticsComp"
+import Enquires from "../components/Enquires"
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts"
+
+const dailyData = [
+    { day: "Sun", value: 50 },
+    { day: "Mon", value: 30 },
+    { day: "Tue", value: 100 },
+    { day: "Wed", value: 45 },
+    { day: "Thu", value: 60 },
+    { day: "Fri", value: 80 },
+    { day: "Sat", value: 150 },
+];
 
 const Dashboard: React.FC = () => {
 
     return (
         <div className="dashboard flex">
             <Navigation />
-            <div className=" w-[77%] mx-auto">
+            <div className=" w-[77%] ml-auto pr-7">
                 <DashboardHeader />
                 <div className="flex items-center justify-between mt-4">
                     <p className="font-bold  text-[30px]">
@@ -17,7 +30,7 @@ const Dashboard: React.FC = () => {
                 </div>
                 <hr className="mt-5" />
                 <div className="flex mt-10 justify-between">
-                    <div className="flex flex-col gap-3 w-[22%] bg-white rounded-[15px] shadow-lg py-5 px-4">
+                    <div className="flex flex-col gap-3 w-[22%] bg-white rounded-[15px] shadow-lg py-5 px-4 justify-center">
                         <div className="flex justify-between">
                             <p>
                                 New Leads
@@ -37,7 +50,7 @@ const Dashboard: React.FC = () => {
                         <p>Last Month: <span className="font-semibold">56</span></p>
                     </div>
 
-                    <div className="flex flex-col gap-3 w-[22%] bg-white rounded-[15px] shadow-lg py-5 px-4">
+                    <div className="flex flex-col gap-3 w-[22%] bg-white rounded-[15px] shadow-lg py-5 px-4 justify-center">
                         <div className="flex justify-between">
                             <p>
                                 Total Sales
@@ -57,7 +70,7 @@ const Dashboard: React.FC = () => {
                         <p>Last Month: <span className="font-semibold">14</span></p>
                     </div>
 
-                    <div className="flex flex-col gap-3 w-[22%] bg-white rounded-[15px] shadow-lg py-5 px-4">
+                    <div className="flex flex-col gap-3 w-[22%] bg-white rounded-[15px] shadow-lg py-5 px-4 justify-center">
                         <div className="flex justify-between">
                             <p>
                                 Total Revenue
@@ -74,24 +87,36 @@ const Dashboard: React.FC = () => {
                         <p>Last Month: <span className="font-semibold">₦250M</span></p>
                     </div>
 
-                    <div className="flex flex-col gap-3 w-[25%] bg-white rounded-[15px] shadow-lg py-5 px-4">
+                    <div className=" w-[25%] bg-white rounded-[15px] shadow-lg py-5 px-4">
+                        <AnalyticsComp />
+                    </div>
+                </div>
+                <div className="flex gap-2 mt-4">
+                    <div className="w-[55%] bg-white rounded-md pt-7" >
+                        <BarChart width={630} height={250} data={dailyData}>
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis dataKey="day" />
+                            <YAxis tickFormatter={(value) => `₦${value}M`} />
+                            <Tooltip formatter={(value) => [`₦${value}M`, "Revenue"]} />
+                            <Bar dataKey="value" fill="#2BB0EE" radius={[5, 5, 0, 0]} />
+                        </BarChart>
+                    </div>
+                    <div className="w-[45%] bg-white rounded-md p-3">
                         <div className="flex justify-between">
-                            <p>
-                                Activities
-                            </p>
-                            <span className="bg-[#E8E8E8] rounded-full  w-7 h-7 flex items-center justify-center">
-                                <i className="fas fa-users"></i>
-                            </span>
+                            <p className="font-bold text-[20px]">Enquires</p>
+                            <button className="border-1 rounded-md px-2">
+                                <i className="fas fa-align-left pr-2"></i>
+                                Sort By
+                            </button>
                         </div>
-                        <div className="flex items-center gap-4">
-                            <p className="font-bold text-[39px]">
-                                104
-                            </p>
-                            <span className="bg-[#E8E8E8] text-[#2BB0EE] px-2.5 py-1 rounded-lg">
-                                +49%
-                            </span>
+                        <div className="flex gap-44 mt-4">
+                            <div className="flex gap-1">
+                                <input type="checkbox" name="" id="" />
+                                <p>Name</p>
+                            </div>
+                            <p>Message</p>
                         </div>
-                        <p>Last Month: <span className="font-semibold">56</span></p>
+                        <Enquires />
                     </div>
                 </div>
             </div>
