@@ -10,7 +10,7 @@ declare module "react-date-range" {
 
     export interface DateRangePickerProps {
         ranges: Range[];
-        onChange: (ranges: { [key: string]: Range }) => void;
+        onChange: (ranges: { selection: Range }) => void;
         showSelectionPreview?: boolean;
         moveRangeOnFirstSelection?: boolean;
         months?: number;
@@ -18,6 +18,7 @@ declare module "react-date-range" {
         className?: string;
         minDate?: Date;
         maxDate?: Date;
+        editableDateInputs?: boolean;
     }
 
     export class DateRangePicker extends React.Component<DateRangePickerProps> { }
