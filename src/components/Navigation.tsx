@@ -81,7 +81,7 @@ const Navigation: React.FC = () => {
                     <i className="fas fa-circle-info mr-2"></i>About
                 </NavLink>
 
-                <button className="test w-20 text-red-500">Logout</button>
+                <button className="test w-20 text-red-500 font-semibold">Logout</button>
             </div>
         </div>
     );
