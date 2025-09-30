@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const DashboardHeader: React.FC = () => {
     return (
         <div className="dashboard-pages-header bg-white flex items-center justify-between h-[80px] w-full mx-auto mt-10 rounded-2xl px-10 gap-20">
@@ -15,9 +17,11 @@ const DashboardHeader: React.FC = () => {
                     <input className="px-1 outline-none" type="search" name="" id="" placeholder="Search" />
                 </div>
                 <div className="flex gap-6">
-                    <span className="bg-[#f8f8f8] rounded-full w-10 h-10 flex items-center justify-center">
-                        <i className="far fa-bell text-black text-xl"></i>
-                    </span>
+                    <Link to="/notification">
+                        <span className="bg-[#f8f8f8] rounded-full w-10 h-10 flex items-center justify-center">
+                            <i className="far fa-bell text-black text-xl"></i>
+                        </span>
+                    </Link>
                     <span className="bg-[#04C72B] text-white text-xl font-bold rounded-full w-10 h-10 flex items-center justify-center">
                         C
                     </span>

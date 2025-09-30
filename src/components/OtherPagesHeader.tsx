@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const OtherPagesHeader: React.FC<{ title: string }> = ({ title }) => {
     return (
         <div className="other-pages-header bg-white flex items-center h-[80px] w-full mt-10 rounded-2xl px-10 gap-20">
@@ -14,9 +16,11 @@ const OtherPagesHeader: React.FC<{ title: string }> = ({ title }) => {
                 </button>
             </div>
             <div className="flex gap-6 ml-auto">
-                <span className="bg-[#f8f8f8] rounded-full w-10 h-10 flex items-center justify-center">
-                    <i className="far fa-bell text-black text-xl"></i>
-                </span>
+                <Link to="/notification">
+                    <span className="bg-[#f8f8f8] rounded-full w-10 h-10 flex items-center justify-center">
+                        <i className="far fa-bell text-black text-xl"></i>
+                    </span>
+                </Link>
                 <span className="bg-[#04C72B] text-white text-xl font-bold rounded-full w-10 h-10 flex items-center justify-center">
                     C
                 </span>
