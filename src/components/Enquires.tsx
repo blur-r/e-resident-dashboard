@@ -1,9 +1,12 @@
+import { useState } from "react"
+
 const Enquires: React.FC = () => {
+    const [canDelete, setCanDelete] = useState(false)
     return (
-        <div className="flex items-start justify-between p-2 bg-[#F8F8F8]">
+        <div className="flex items-start justify-between py-3 px-3 bg-[#F8F8F8]  -mx-3">
 
             <div className="flex items-start gap-3 w-[35%]">
-                <input type="checkbox" className="mt-2" />
+                <input type="checkbox" className="mt-2" onChange={() => setCanDelete((prev) => !prev)} />
                 <span className="bg-[#E8E8E8] rounded-full  w-10 h-10 flex items-center justify-center">
                     <i className="fas fa-user"></i>
                 </span>
@@ -17,13 +20,13 @@ const Enquires: React.FC = () => {
                     <p className="text-sm text-gray-700">
                         Hi, Please i made payment for an apartment but I’m yet to receive an email, kindly help..
                     </p>
-                    <button className="self-end px-3 py-1 text-xs text-white bg-blue-500 rounded mr-5">
+                    <button className="self-end px-3 py-1 text-xs text-white bg-[#2BB0EE] rounded mr-5">
                         Reply
                     </button>
                 </div>
                 <div className="flex flex-col items-center gap-2 justify-evenly">
-                    <i className="fas fa-trash text-red-500 cursor-pointer"></i>
-                    <i className="fas fa-expand text-gray-500 cursor-pointer"></i>
+                    {canDelete && <i className="fas fa-trash text-red-500 cursor-pointer"></i>}
+                    <i className="fas fa-expand text-gray-500 cursor-pointer mt-auto"></i>
                 </div>
             </div>
 

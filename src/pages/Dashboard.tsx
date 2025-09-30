@@ -4,6 +4,7 @@ import DateRangeSelector from "../components/DateRangeSelector"
 import AnalyticsComp from "../components/AnalyticsComp"
 import Enquires from "../components/Enquires"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts"
+import RecentTransactionTableRow from "../components/RecentTransactionTableRow"
 
 const dailyData = [
     { day: "Sun", value: 50 },
@@ -109,8 +110,8 @@ const Dashboard: React.FC = () => {
                                 Sort By
                             </button>
                         </div>
-                        <div className="flex gap-44 mt-4">
-                            <div className="flex gap-1">
+                        <div className="flex gap-30 mt-4">
+                            <div className="flex gap-1 mb-2">
                                 <input type="checkbox" name="" id="" />
                                 <p>Name</p>
                             </div>
@@ -118,6 +119,37 @@ const Dashboard: React.FC = () => {
                         </div>
                         <Enquires />
                     </div>
+                </div>
+                <div className="bg-white rounded-lg shadow-sm p-3 mt-4">
+                    <div className="flex justify-between items-start">
+                        <div>
+                            <p className="font-bold text-xl">Recent Transaction</p>
+                            <p className="text-[#7F8C8D] text-[12px]">Last Updated: 11:36am</p>
+                        </div>
+                        <button className="border-1 rounded-md px-2 py-1">
+                            See all
+                            <i className="fas fa-angle-right pl-1.5"></i>
+                        </button>
+                    </div>
+                    <div className="overflow-x-auto mt-4">
+                        <table className="w-full border-collapse text-sm">
+                            <thead>
+                                <tr className="text-left text-gray-500 border-b">
+                                    <th className="p-3">Order ID</th>
+                                    <th className="p-3">Name</th>
+                                    <th className="p-3">Status</th>
+                                    <th className="p-3">Amount</th>
+                                    <th className="p-3">Category</th>
+                                    <th className="p-3">Property Title</th>
+                                    <th className="p-3">Property Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <RecentTransactionTableRow />
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </div>
         </div>
