@@ -5,6 +5,7 @@ import AnalyticsComp from "../components/AnalyticsComp"
 import Enquires from "../components/Enquires"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts"
 import RecentTransactionTableRow from "../components/RecentTransactionTableRow"
+import { Link } from "react-router-dom"
 
 const dailyData = [
     { day: "Sun", value: 50 },
@@ -130,10 +131,12 @@ const Dashboard: React.FC = () => {
                                 <p className="font-bold text-xl">Recent Transaction</p>
                                 <p className="text-[#7F8C8D] text-[12px]">Last Updated: 11:36am</p>
                             </div>
-                            <button className="border-1 rounded-md px-2 py-1">
-                                See all
-                                <i className="fas fa-angle-right pl-1.5"></i>
-                            </button>
+                            <Link to="/sales" className="cursor-pointer">
+                                <button className="border-1 rounded-md px-2 py-1 cursor-pointer">
+                                    See all
+                                    <i className="fas fa-angle-right pl-1.5"></i>
+                                </button>
+                            </Link>
                         </div>
                         <div className="overflow-x-auto mt-4">
                             <table className="w-full border-collapse text-sm">
