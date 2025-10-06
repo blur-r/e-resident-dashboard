@@ -3,7 +3,7 @@ import DashboardHeader from "../components/DashboardHeader"
 import DateRangeSelector from "../components/DateRangeSelector"
 import AnalyticsComp from "../components/AnalyticsComp"
 import Enquires from "../components/Enquires"
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts"
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
 import RecentTransactionTableRow from "../components/RecentTransactionTableRow"
 import { Link } from "react-router-dom"
 
@@ -99,13 +99,15 @@ const Dashboard: React.FC = () => {
                     </div>
                     <div className="flex gap-2 mt-4">
                         <div className="w-[55%] bg-white rounded-md pt-7" >
-                            <BarChart width={630} height={250} data={dailyData}>
-                                <CartesianGrid strokeDasharray="3 3" />
-                                <XAxis dataKey="day" />
-                                <YAxis tickFormatter={(value) => `₦${value}M`} />
-                                <Tooltip formatter={(value) => [`₦${value}M`, "Revenue"]} />
-                                <Bar dataKey="value" fill="#2BB0EE" radius={[5, 5, 0, 0]} />
-                            </BarChart>
+                            <ResponsiveContainer width="100%">
+                                <BarChart height={250} data={dailyData}>
+                                    <CartesianGrid strokeDasharray="3 3" />
+                                    <XAxis dataKey="day" />
+                                    <YAxis tickFormatter={(value) => `₦${value}M`} />
+                                    <Tooltip formatter={(value) => [`₦${value}M`, "Revenue"]} />
+                                    <Bar dataKey="value" fill="#2BB0EE" radius={[5, 5, 0, 0]} />
+                                </BarChart>
+                            </ResponsiveContainer>
                         </div>
                         <div className="w-[45%] bg-white rounded-md p-3">
                             <div className="flex justify-between">
