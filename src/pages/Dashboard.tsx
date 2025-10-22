@@ -21,8 +21,13 @@ const Dashboard: React.FC = () => {
 
     return (
         <div>
-            <div className="hidden info">
-                <p className="text-red-500 text-3xl text-center">Open On a Larger Screen</p>
+            <div className="hidden info flex-col items-center justify-center h-screen bg-gray-50 text-center px-4">
+                <div className="bg-white border-2 border-red-500 text-red-700 px-8 py-6 rounded-2xl shadow-lg max-w-md">
+                    <h2 className="text-2xl font-semibold mb-2">Open on a Larger Screen</h2>
+                    <p className="text-sm text-gray-600">
+                        This dashboard is best viewed on devices with a screen width above 1250px.
+                    </p>
+                </div>
             </div>
             <div className="dashboard flex">
                 <Navigation />
