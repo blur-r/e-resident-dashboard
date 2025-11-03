@@ -1,6 +1,7 @@
 import Navigation from "../components/Navigation"
 import OtherPagesHeader from "../components/OtherPagesHeader"
 import AnalyticsComp from "../components/AnalyticsComp"
+import DateRangeSelector from "../components/DateRangeSelector"
 import {
     AreaChart,
     Area,
@@ -113,7 +114,11 @@ const Analytics: React.FC = () => {
                 <div className="flex mt-4 justify-between">
                     <div className="w-[72%]">
                         <div className="bg-white p-4 rounded-xl shadow w-full">
-                            <h2 className="font-semibold mb-4">Revenue Analytics</h2>
+                            <div className="flex justify-between pb-4">
+                                <h2 className="font-semibold mb-4">Revenue Analytics</h2>
+                                <DateRangeSelector />
+                            </div>
+
                             <ResponsiveContainer width="100%" height={400}>
                                 <AreaChart data={data}>
                                     <defs>
